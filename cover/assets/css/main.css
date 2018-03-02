@@ -1,0 +1,374 @@
+@font-face {
+    font-family: Typewriter;
+    src: url("../fonts/TypeWriter.ttf");
+}
+
+/* Reset */
+
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 18px;
+		vertical-align: baseline;
+		font-family: 'Typewriter';
+		color: white;
+	}
+
+	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+		display: block;
+	}
+
+	body {
+		line-height: 1;
+	}
+
+	ol, ul {
+		list-style: none;
+	}
+
+	blockquote, q {
+		quotes: none;
+	}
+
+	blockquote:before, blockquote:after, q:before, q:after {
+		content: '';
+		content: none;
+	}
+
+	table {
+		border-collapse: collapse;
+		border-spacing: 0;
+	}
+
+	body {
+		-webkit-text-size-adjust: none;
+	}
+
+
+/* Basic */
+
+	body {
+		background: #fff;
+		overflow: hidden;
+	}
+
+		body.loading * {
+			-moz-animation: none !important;
+			-webkit-animation: none !important;
+			-ms-animation: none !important;
+			animation: none !important;
+		}
+
+/* Wrapper */
+
+	@-moz-keyframes wrapper {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes wrapper {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-ms-keyframes wrapper {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes wrapper {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	#wrapper {
+		-moz-animation: wrapper 1s forwards;
+		-webkit-animation: wrapper 1s forwards;
+		-ms-animation: wrapper 1s forwards;
+		animation: wrapper 1s forwards;
+        height: 100%;
+		left: 0;
+		top: 0;
+		opacity: 0;
+		position: fixed;
+		width: 100%;
+        background-color: black; /* THIS IS WHAT SETS THE COLOR OF THE BACKGROUND */
+	}
+
+/* Borders */
+
+	#top, #bottom, #left, #right {
+		background: white;
+		position: fixed;
+	}
+	#left, #right {
+		top: 0; bottom: 0;
+		width: 0.5em;
+		}
+	#left { left: 0; }
+	#right { right: 0; }
+		
+	#top, #bottom {
+		left: 0; right: 0;
+		height: 0.5em;
+		}
+		#top { top: 0; }
+		#bottom { bottom: 0; }
+
+	/* Main */
+
+	#main {
+		height: 100%;
+		left: 0;
+		top: 0;
+		position: fixed;
+		text-align: center;
+		width: 100%;
+		background-image: url('../../cover.jpg');
+		background-repeat: no-repeat;
+		background-position: bottom right;
+		background-size: cover;
+	}
+
+		#main:before {
+			content: '';
+			display: inline-block;
+			height: 100%;
+			margin-right: 0;
+			vertical-align: middle;
+			width: 1px;
+		}
+
+
+/* Menu */
+
+	#menu {
+	    justify-content: flex-start;
+	    width: 18%;
+	    height: 50%;
+	    float: left;
+	    opacity: 1;
+	    margin: 0.5em;
+	    position: initial;
+	    text-align: left;
+	}
+
+	#category {
+		margin: calc(2% + 0.5em);
+	}
+
+	#subcategory {
+		margin-left: calc(5% + 0.5em);
+		margin-top: 5%;
+		position: relative;
+	}
+
+	/* Icon */
+
+	#icon, #label {
+	    width: 35%;
+	    font-size: 1.5em;
+	    text-align: left;
+	    left: 0;
+	}
+
+	#subicon, #sublabel {
+		width: 25%;
+		display: none;
+	}
+
+	#label {
+		display: initial;
+		visibility: hidden;
+	}
+
+	#category:hover #label {
+		visibility: visible;
+	}
+
+	#category:hover #sublabel {
+		display: inline-block;
+	}
+
+	#category:hover #subicon {
+		display: inline-block;
+	}
+
+/* Header */
+
+	@-moz-keyframes header {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-webkit-keyframes header {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@-ms-keyframes header {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	@keyframes header {
+		0% {
+			opacity: 0;
+		}
+
+		100% {
+			opacity: 1;
+		}
+	}
+
+	#header {
+		-moz-animation: header 1s 0.5s forwards;
+		-webkit-animation: header 1s 0.5s forwards;
+		-ms-animation: header 1s 0.5s forwards;
+		animation: header 1s 0.5s forwards;
+		-moz-backface-visibility: hidden;
+		-webkit-backface-visibility: hidden;
+		-ms-backface-visibility: hidden;
+		backface-visibility: hidden;
+		cursor: default;
+		display: inline-block;
+		opacity: 0;
+		position: absolute;
+		text-align: center;
+		vertical-align: middle;
+		width: calc(100% - 3em);
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+
+	#coverlogo {
+		width: 60%;
+	}
+
+	#coverlogoSmall {
+		width: 60%;
+		display: none;
+	}
+
+/* Wide */
+
+	@media screen and (max-width: 1680px) {
+
+		/* Basic */
+
+			body, input, select, textarea, #label, #sublabel {
+				font-size: 14pt;
+			}
+
+			#menu {
+				width: 18%;
+			}
+
+		}
+
+/* Normal */
+
+	@media screen and (max-width: 1280px) {
+
+		/* Basic */
+
+			body, input, select, textarea, #label, #sublabel {
+				font-size: 12pt;
+			}
+
+			#menu {
+				width: 22%;
+			}
+
+		}
+
+/* Mobile */
+
+	@media screen and (max-width: 736px) {
+
+		/* Basic */
+
+			body {
+				/*min-width: 320px;*/
+			}
+
+			body, input, select, textarea, #label, #sublabel {
+				font-size: 10pt;
+			}
+
+			#menu {
+				width: 18%;
+			}
+
+	}
+
+/* Mobile (Portrait) */
+
+	@media screen and (max-width: 480px) {
+
+		/* Basic */
+
+			body {
+				/*min-width: 320px;*/
+			}
+
+			body, input, select, textarea, #label, #sublabel {
+				font-size: 8pt;
+			}
+
+			#menu {
+				width: 35%;
+			}
+
+	}
+
+	@media screen and (max-width: 375px) {
+
+			#coverlogo {
+				width: 60%;
+				display: none;
+			}
+
+			#coverlogoSmall {
+				width: 60%;
+				display: inline-block;
+			}
+
+	}
