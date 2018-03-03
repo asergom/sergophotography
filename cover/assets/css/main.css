@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'Typewriter';
-    src: url('typewriter-webfont.woff2') format('woff2'),
-         url('typewriter-webfont.woff') format('woff');
+    src: url('../fonts/typewriter-webfont.woff2') format('woff2'),
+         url('../fonts/typewriter-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
