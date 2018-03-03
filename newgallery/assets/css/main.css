@@ -650,81 +650,9 @@ header .logo a h1:hover{
 			opacity: 1;
 		}
 	}
-
-	@-moz-keyframes nav-icons {
-		0% {
-			-moz-transform: translate3d(0,-10em,0);
-			-webkit-transform: translate3d(0,-10em,0);
-			-ms-transform: translate3d(0,-10em,0);
-			transform: translate3d(0,-10em,0);
-			opacity: 0;
-		}
-
-		100% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-			opacity: 1;
-		}
-	}
-
-	@-webkit-keyframes nav-icons {
-		0% {
-			-moz-transform: translate3d(0,-10em,0);
-			-webkit-transform: translate3d(0,-10em,0);
-			-ms-transform: translate3d(0,-10em,0);
-			transform: translate3d(0,-10em,0);
-			opacity: 0;
-		}
-
-		100% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-			opacity: 1;
-		}
-	}
-
-	@-ms-keyframes nav-icons {
-		0% {
-			-moz-transform: translate3d(0,-10em,0);
-			-webkit-transform: translate3d(0,-10em,0);
-			-ms-transform: translate3d(0,-10em,0);
-			transform: translate3d(0,-10em,0);
-			opacity: 0;
-		}
-
-		100% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-			opacity: 1;
-		}
-	}
-
-	@keyframes nav-icons {
-		0% {
-			-moz-transform: translate3d(0,-10em,0);
-			-webkit-transform: translate3d(0,-10em,0);
-			-ms-transform: translate3d(0,-10em,0);
-			transform: translate3d(0,-10em,0);
-			opacity: 0;
-		}
-
-		100% {
-			-moz-transform: translate3d(0,0,0);
-			-webkit-transform: translate3d(0,0,0);
-			-ms-transform: translate3d(0,0,0);
-			transform: translate3d(0,0,0);
-			opacity: 1;
-		}
-	}
   
   header{
-    padding: 25px 0 0 25px; 
+    padding: 0; 
     top: 0;
     left: 0;
     position: relative;
@@ -743,9 +671,17 @@ header .logo a h1:hover{
 
  header .icon {
     margin-left: 25px;
-    width: 10%;
+    width: 60px;
     margin: 0;
   }
+
+.icon object{
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 10px;
+    width: 50px;
+    list-style: none;
+}
   
   .main .thumb{
       width: 50%;
@@ -761,21 +697,36 @@ header .logo a h1:hover{
 }
 
 @media (max-width:550px){
-  .main .thumb{
-    width: 100%;
-  }
-  
-  .main .thumb .caption h1{
-    font-size: 16px;
-  }
+	.main .thumb{
+	width: 100%;
+	}
 
-  header {
-    display: inline-flex;
-  }
+	.main .thumb .caption h1{
+	font-size: 12px;
+	}
 
-  .logo, .icon {
-    padding: 1%;
-    width: 15%;
-    margin: 0;
-  }
+	header {
+	display: inline-flex;
+	width: 100%;
+	padding-top: 0;
+	}
+
+	header .logo {
+		padding: 0;
+		padding-left: 25px;
+		padding-right: 25px;
+	}
+
+		header .icon {
+		margin-left: 25px;
+		margin: 0;
+	}
+
+		.icon object{
+		display: inline-block;
+		overflow: hidden;
+		list-style: none;
+		width: 75%;
+		margin-top: 16px;
+	}
 }
