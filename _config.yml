@@ -1,0 +1,8 @@
+# GitHub Pages settings.
+# Files listed here stay in the repository but are not published on the website:
+#  - the unprocessed originals (the site uses their web versions in images/web)
+#  - the build script and README
+exclude:
+  - newgallery/images/raw
+  - tools
+  - README.md
