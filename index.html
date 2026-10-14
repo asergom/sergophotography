@@ -1,78 +1,64 @@
-<!DOCTYPE HTML>
-<html>
-    <head>
-		<title>SerGo Photography</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="cover/assets/css/main.css" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-	</head>
-    
-    <body id="loading">
-		<div id="wrapper">
-			<div id="main">
-				<!-- Border -->
-				<div id="left"></div>
-				<div id="right"></div>
-				<div id="top"></div>
-				<div id="bottom"></div>
-				<!-- Menu -->
-				<div id="menu">
-					<div id="category">
-						<a>
-                            <object id="icon" type="image/svg+xml" data="icons/photoslogo.svg"></object>
-                        </a>	
-						<div id="subcategory">
-							<a href="newgallery/thenightof.html">
-	                            <object id="subicon" type="image/svg+xml" data="icons/thenightoflogo.svg"></object>
-	                            <p id="sublabel">_The_night_of</p>
-	                        </a>
-						</div>
-						<div id="subcategory">
-							<a href="newgallery/streetwalking.html">
-	                            <object id="subicon" type="image/svg+xml" data="icons/streetwalkinglogo.svg"></object>
-	                            <p id="sublabel">_Street_walking</p>
-	                        </a>
-						</div>
-						<div id="subcategory">
-							<a href="newgallery/shapes.html">
-	                            <object id="subicon" type="image/svg+xml" data="icons/shapeslogo.svg"></object>
-	                            <p id="sublabel">_Shapes</p>
-	                        </a>
-						</div>
-						<div id="subcategory">
-							<a href="newgallery/everyday.html">
-	                            <object id="subicon" type="image/svg+xml" data="icons/everydaylogo.svg"></object>
-	                            <p id="sublabel">_Everyday</p>
-	                        </a>
-						</div>
-						<div id="subcategory">
-							<a href="newgallery/outland.html">
-	                            <object id="subicon" type="image/svg+xml" data="icons/outlandlogo.svg"></object>
-	                            <p id="sublabel">_Outland</p>
-	                        </a>
-						</div>
-					</div>
-				</div>
-				<!-- Header -->
-				<header id="header">
-                    <div>
-                        <object id="coverlogoSmall" type="image/svg+xml" data="icons/SPlettersSmall.svg">Your browser does not support SVGs</object>
-                    </div>
-                    <div>
-                        <object id="coverlogo" type="image/svg+xml" data="icons/SPletters.svg">Your browser does not support SVGs</object>
-                    </div>
-				</header>
-			</div>
-		</div>
-        <script src="cover/assets/js/switch.js"></script>
-        <script>
-			window.onload = function() { document.body.className = ''; }
-			window.ontouchmove = function() { return false; }
-			window.onorientationchange = function() { document.body.scrollTop = 0; }
-		</script>
-		<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-	</body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>SerGo Photography</title>
+  <meta name="description" content="SerGo Photography — photo series: The night of, Street walking, Shapes, Everyday and Outland.">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="SerGo Photography">
+  <meta property="og:description" content="Photo series: The night of, Street walking, Shapes, Everyday and Outland.">
+  <meta property="og:image" content="https://asergom.github.io/sergophotography/cover/cover-og.jpg">
+  <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/typewriter-webfont.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/cover.css">
+</head>
+<body>
+  <div class="cover">
+    <img class="cover-photo"
+         src="cover/cover-1595.webp"
+         srcset="cover/cover-960.webp 960w, cover/cover-1595.webp 1595w"
+         sizes="100vw" width="1595" height="1111" alt="" fetchpriority="high">
+
+    <h1 class="logo">
+      <img src="icons/SPletters.svg" alt="SerGo Photography" width="928" height="198">
+    </h1>
+
+    <nav class="menu" aria-label="Photo series">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="series">
+        <img src="icons/photoslogo.svg" alt="" width="80" height="80">
+        <span class="menu-hint">_photos</span>
+      </button>
+      <ul id="series" class="menu-list">
+        <li><a href="newgallery/thenightof.html"><img src="icons/thenightoflogo.svg" alt="" width="44" height="44"><span>_The_night_of</span></a></li>
+        <li><a href="newgallery/streetwalking.html"><img src="icons/streetwalkinglogo.svg" alt="" width="44" height="44"><span>_Street_walking</span></a></li>
+        <li><a href="newgallery/shapes.html"><img src="icons/shapeslogo.svg" alt="" width="44" height="44"><span>_Shapes</span></a></li>
+        <li><a href="newgallery/everyday.html"><img src="icons/everydaylogo.svg" alt="" width="44" height="44"><span>_Everyday</span></a></li>
+        <li><a href="newgallery/outland.html"><img src="icons/outlandlogo.svg" alt="" width="44" height="44"><span>_Outland</span></a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <script>
+    (function () {
+      var menu = document.querySelector(".menu");
+      var btn = menu.querySelector(".menu-toggle");
+      function set(open) {
+        menu.classList.toggle("open", open);
+        btn.setAttribute("aria-expanded", open ? "true" : "false");
+      }
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        set(!menu.classList.contains("open"));
+      });
+      document.addEventListener("click", function (e) {
+        if (!menu.contains(e.target)) set(false);
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") { set(false); btn.focus(); }
+      });
+    })();
+  </script>
+</body>
 </html>

@@ -1,0 +1,193 @@
+/* SerGo Photography — cover page */
+
+@font-face {
+  font-family: "Typewriter";
+  src: url("../fonts/typewriter-webfont.woff2") format("woff2"),
+       url("../fonts/typewriter-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  --frame: 8px;
+  --font: "Typewriter", "Courier New", ui-monospace, monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
+  color: #fff;
+  font-family: var(--font);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+img { display: block; }
+ul { list-style: none; margin: 0; padding: 0; }
+:focus-visible { outline: 2px solid #fff; outline-offset: 3px; }
+
+/* photo inside a white frame, fills the screen (dvh = correct height on mobile browsers) */
+.cover {
+  position: fixed;
+  inset: 0;
+  height: 100vh;
+  height: 100dvh;
+  border: var(--frame) solid #fff;
+  overflow: hidden;
+  background: #817bab;
+  animation: fade 1s both;
+}
+
+.cover-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: right bottom;
+}
+
+/* ------------------------------------------------------------- logo */
+
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  width: min(58vw, 960px);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  animation: fade 1s 0.5s both;
+}
+.logo img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 1px 14px rgba(0, 0, 0, 0.22));
+}
+
+/* ------------------------------------------------------------- menu */
+
+.menu {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  z-index: 2;
+  padding: 8px 24px 12px 8px;
+  border-radius: 18px;
+  transition: background-color 0.3s;
+}
+
+.menu-toggle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.menu-toggle img {
+  width: 80px;
+  height: 80px;
+  filter: drop-shadow(0 1px 6px rgba(0, 0, 0, 0.25));
+  transition: transform 0.25s;
+}
+.menu-toggle:hover img { transform: scale(1.05); }
+
+.menu-hint {
+  font-size: 14px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  transition: opacity 0.3s;
+}
+
+.menu-list {
+  display: grid;
+  gap: 4px;
+  margin-top: 8px;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  visibility: hidden;
+  transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0s 0.35s;
+}
+
+.menu-list a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 2px 8px 2px 18px;
+  color: #fff;
+  font-size: 17px;
+  text-decoration: none;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+  border-radius: 10px;
+  transition: background-color 0.2s;
+}
+.menu-list a:hover, .menu-list a:focus-visible { background: rgba(255, 255, 255, 0.14); }
+.menu-list img { width: 44px; height: 44px; flex: none; }
+
+/* open: by click/tap (.open), by hover with a mouse, or by keyboard focus */
+.menu.open,
+.menu:has(:focus-visible) {
+  background: rgba(20, 16, 40, 0.42);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+.menu.open .menu-list,
+.menu:has(:focus-visible) .menu-list {
+  max-height: 340px;
+  opacity: 1;
+  visibility: visible;
+  transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0s;
+}
+.menu.open .menu-hint,
+.menu:has(:focus-visible) .menu-hint { opacity: 0; }
+
+@media (hover: hover) and (pointer: fine) {
+  .menu:hover {
+    background: rgba(20, 16, 40, 0.42);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+  }
+  .menu:hover .menu-list {
+    max-height: 340px;
+    opacity: 1;
+    visibility: visible;
+    transition: max-height 0.35s ease, opacity 0.3s ease, visibility 0s;
+  }
+  .menu:hover .menu-hint { opacity: 0; }
+}
+
+/* ------------------------------------------------------------- small screens */
+
+@media (max-width: 736px) {
+  :root { --frame: 6px; }
+  .logo { width: 84vw; }
+  .menu { top: max(6px, env(safe-area-inset-top)); left: 6px; }
+  .menu-toggle img { width: 64px; height: 64px; }
+  .menu-list a { font-size: 16px; padding-left: 10px; }
+}
+
+@media (max-height: 480px) and (orientation: landscape) {
+  .logo { width: 56vw; }
+  .menu-toggle img { width: 52px; height: 52px; }
+  .menu-list { grid-template-columns: 1fr 1fr; }
+  .menu-list a { min-height: 44px; font-size: 15px; }
+}
+
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
